@@ -4,7 +4,7 @@ const container = document.getElementById("container");
 const recommendItems = document.getElementById("recommendItems");
 
 /* =========================
-   1. 추천 의류 (그대로 유지 + 확장)
+   추천 의류 아이콘
 ========================= */
 
 const clothes = [];
@@ -21,15 +21,15 @@ if (data.temp === "쌀쌀함") {
   clothes.push(
     { icon: "👔", label: "긴팔" },
     { icon: "👖", label: "긴바지" },
-    { icon: "🧥", label: "얇은잠바" },
+    { icon: "🧥", label: "얇은 잠바" },
   );
 }
 
 if (data.temp === "추움") {
   clothes.push(
-    { icon: "🧥", label: "패딩" },
     { icon: "🥼", label: "롱패딩" },
-    { icon: "👖", label: "기모바지" },
+    { icon: "🧥", label: "패딩" },
+    { icon: "👖", label: "긴바지" },
   );
 }
 
@@ -43,100 +43,67 @@ clothes.forEach((item) => {
 });
 
 /* =========================
-   2. 룩북 데이터 풀
-========================= */
-
-const pool = {
-  summer_casual: "yk",
-  summer_street: "ys",
-  summer_minimal: "ym",
-  fall_casual: "gk",
-  hoodie: "gh",
-  windbreaker: "b",
-  winter_casual: "wk",
-  padding: "wp",
-  coat: "c",
-  rainy: "r",
-};
-
-/* =========================
-   3. 상황별 가중치
-========================= */
-
-let weights = {};
-
-if (data.temp === "더움") {
-  weights = {
-    summer_casual: 4,
-    summer_street: 3,
-    summer_minimal: 3,
-  };
-}
-
-if (data.temp === "쌀쌀함") {
-  weights = {
-    fall_casual: 4,
-    hoodie: 3,
-    windbreaker: 3,
-  };
-}
-
-if (data.temp === "추움") {
-  weights = {
-    winter_casual: 4,
-    padding: 3,
-    coat: 3,
-  };
-}
-
-/* 날씨 보정 */
-if (data.weather === "비") {
-  weights.rainy = 4;
-  weights.coat = (weights.coat || 0) + 1;
-}
-
-if (data.weather === "맑음") {
-  if (weights.summer_street) weights.summer_street += 1;
-}
-
-/* 습도 보정 */
-if (data.humidity > 70) {
-  if (weights.summer_casual) weights.summer_casual += 1;
-}
-
-if (data.humidity < 30) {
-  if (weights.hoodie) weights.hoodie += 1;
-}
-
-/* =========================
-   4. 랜덤 룩 생성 (핵심)
+   룩북 이미지 추천
 ========================= */
 
 let imageList = [];
-let used = new Set();
 
-function pickRandom(folder, prefix) {
-  let num = Math.floor(Math.random() * 10) + 1;
-  return `../image/lookbook/${folder}/${prefix}${num}.jpg`;
-}
+/* 더움 */
 
-let keys = Object.keys(weights);
+if (data.temp === "더움") {
+  for (let i = 1; i <= 4; i++) {
+    imageList.push(`../image/lookbook/summer_casual/yk${i}.jpg`);
+  }
 
-while (imageList.length < 10) {
-  let randomKey = keys[Math.floor(Math.random() * keys.length)];
-  let prefix = pool[randomKey];
+  for (let i = 1; i <= 3; i++) {
+    imageList.push(`../image/lookbook/summer_street/ys${i}.jpg`);
+  }
 
-  let img = pickRandom(randomKey, prefix);
+  for (let i = 1; i <= 3; i++) {
+    imageList.push(`../image/lookbook/summer_minimal/ym${i}.jpg`);
+  }
+} else if (data.temp === "쌀쌀함") {
+  /* 쌀쌀함 */
+  for (let i = 1; i <= 4; i++) {
+    imageList.push(`../image/lookbook/fall_casual/gk${i}.jpg`);
+  }
 
-  // ⭐ 핵심: 중복이면 다시 뽑기
-  if (used.has(img)) continue;
+  for (let i = 1; i <= 3; i++) {
+    imageList.push(`../image/lookbook/hoodie/gh${i}.jpg`);
+  }
 
-  used.add(img);
-  imageList.push(img);
+  for (let i = 1; i <= 3; i++) {
+    imageList.push(`../image/lookbook/windbreaker/b${i}.jpg`);
+  }
+} else {
+  /* 추움 */
+  for (let i = 1; i <= 4; i++) {
+    imageList.push(`../image/lookbook/winter_casual/wk${i}.jpg`);
+  }
+
+  for (let i = 1; i <= 3; i++) {
+    imageList.push(`../image/lookbook/padding/wp${i}.jpg`);
+  }
+
+  for (let i = 1; i <= 3; i++) {
+    imageList.push(`../image/lookbook/coat/c${i}.jpg`);
+  }
 }
 
 /* =========================
-   5. 출력
+   비 오는 날 보정
+========================= */
+
+if (data.weather === "비") {
+  imageList.splice(7);
+
+  imageList.push("../image/lookbook/rainy/r1.jpg");
+  imageList.push("../image/lookbook/rainy/r2.jpg");
+  imageList.push("../image/lookbook/rainy/r3.jpg");
+}
+
+/* =========================
+   이미지 출력
 ========================= */
 
 imageList.forEach((img) => {

@@ -1,6 +1,8 @@
 const data = JSON.parse(localStorage.getItem("weatherData"));
 
-/*준비물 추천*/
+/* =========================
+   준비물 추천
+========================= */
 let item = [];
 
 if (!data) {
@@ -21,7 +23,9 @@ document.getElementById("item").innerHTML = item
   .map((x) => "• " + x)
   .join("<br>");
 
-/*데이터 매치*/
+/* =========================
+   MATCH DATA
+========================= */
 const matchData = {
   navy: ["white", "gray", "beige"],
   gray: ["black", "white", "navy"],
@@ -32,7 +36,9 @@ const matchData = {
   brown: ["beige", "white", "navy"],
 };
 
-/*색상 선택*/
+/* =========================
+   SELECT COLOR
+========================= */
 function selectColor(color, event) {
   const container = document.getElementById("match");
   container.innerHTML = "";

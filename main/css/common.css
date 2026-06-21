@@ -1,18 +1,23 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/Pretendard/dist/web/static/pretendard.css");
 
-/*전체 사이트 기본 폰트 설정*/
+/* =========================
+   GLOBAL FONT RESET
+========================= */
 
 body {
   margin: 0;
   font-family: "Pretendard", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 16px; /* 본문 기본 */
+  font-weight: 400; /* Regular */
   color: #2c3e50;
   background: #f4f6f9;
 }
 
-/*제목/부제목/본문 통일 규칙*/
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
 
+/* 제목 (32px / Bold) */
 h1,
 h2 {
   font-size: 32px;
@@ -20,19 +25,31 @@ h2 {
   margin: 0;
 }
 
+/* 부제목 (20px / SemiBold) */
 h3 {
   font-size: 20px;
   font-weight: 600;
   margin: 0;
 }
 
+/* 본문 (16px / Regular) */
 p,
-span {
+span,
+div,
+button {
   font-size: 16px;
   font-weight: 400;
+  font-family: "Pretendard", sans-serif;
 }
 
-/*페이지 공통 레이아웃*/
+/* 강조 텍스트 */
+.medium {
+  font-weight: 500;
+}
+
+/* =========================
+   DEFAULT LAYOUT RESET
+========================= */
 
 main {
   padding: 20px;
@@ -40,13 +57,15 @@ main {
 }
 
 section {
-  background: #ffffff;
+  background: white;
   margin: 15px 0;
   padding: 20px;
   border-radius: 12px;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON DEFAULT STYLE
+========================= */
 
 button {
   padding: 10px 15px;
@@ -56,25 +75,18 @@ button {
   cursor: pointer;
 }
 
-/*HEADER*/
-
 .logo {
   color: #fff176;
-  font-weight: 700;
+  font-weight: bold;
   cursor: pointer;
 }
-
-/*NAVIGATION
-   (모든 페이지 공통 네비게이션)*/
 
 nav a {
   margin-left: 10px;
   text-decoration: none;
   color: white;
-  font-weight: 500;
 }
 
-/* 현재 페이지 표시 */
 nav a.active {
   background: white;
   color: #2c3e50;
