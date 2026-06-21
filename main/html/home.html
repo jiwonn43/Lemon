@@ -1,9 +1,57 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/home.css" />
   </head>
-  <body></body>
+
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <div class="logo">LEMON</div>
+
+      <div class="header-title">
+        오늘의 외출에<br />
+        재미를 더하세요
+      </div>
+    </header>
+
+    <!-- 본문 -->
+    <main>
+      <section>
+        <h2>기온</h2>
+        <div class="btn-group">
+          <button class="temp">더움</button>
+          <button class="temp">쌀쌀함</button>
+          <button class="temp">추움</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>날씨</h2>
+        <div class="btn-group">
+          <button class="weather">맑음</button>
+          <button class="weather">흐림</button>
+          <button class="weather">비</button>
+          <button class="weather">눈</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>습도</h2>
+        <input id="humidity" type="range" min="0" max="100" value="50" />
+        <p id="hval">50%</p>
+      </section>
+
+      <section>
+        <button id="start">오늘의 외출 시작하기</button>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>대덕소프트웨어마이스터고 1학년 3반 10번 윤지원</footer>
+
+    <script src="../js/home.js"></script>
+  </body>
 </html>

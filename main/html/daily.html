@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daily</title>
+
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo" onclick="location.href = 'home.html'">LEMON</div>
+
+        <nav>
+          <a href="lookbook.html">Lookbook</a>
+          <a href="score.html">Score</a>
+          <a href="style.html">Style</a>
+          <a href="daily.html" class="active">Daily</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 기분 -->
+      <section>
+        <h2>오늘의 기분</h2>
+
+        <div class="mood-box">
+          <label>
+            <input type="radio" name="mood" value="happy" />
+            😊 기쁨
+          </label>
+
+          <label>
+            <input type="radio" name="mood" value="normal" />
+            😐 평범
+          </label>
+
+          <label>
+            <input type="radio" name="mood" value="sad" />
+            😢 우울
+          </label>
+        </div>
+      </section>
+
+      <!-- 운세 -->
+      <section>
+        <h2>오늘의 운세</h2>
+        <p id="fortune"></p>
+      </section>
+
+      <!-- 플리 -->
+      <section>
+        <h2>플레이리스트</h2>
+        <p id="music">오늘의 기분을 선택해 주세요.</p>
+      </section>
+    </main>
+
+    <script src="../js/daily.js"></script>
+  </body>
+</html>

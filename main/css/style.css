@@ -1,0 +1,98 @@
+/* style 페이지는 컬러 선택과 추천 컬러 매치를 보여준다 */
+
+/* 전체 배경 및 기본 정렬 */
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f6f9;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* 메인 레이아웃 */
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* 기능 카드 */
+section {
+  background: white;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* 컬러 선택 영역 */
+.color-palette {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* 컬러 원형 버튼 */
+.chip {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+/* hover 확대 */
+.color-item:hover .chip {
+  transform: scale(1.1);
+}
+
+/* 추천 컬러 박스 */
+.match-box {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 추천 컬러 직사각형 */
+.match-chip {
+  width: 90px;
+  height: 50px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  color: white;
+
+  border: 2px solid #ddd;
+}
+
+/* 색상 정의 */
+.navy {
+  background: #001f3f;
+}
+.gray {
+  background: #aaa;
+}
+.white {
+  background: #fff;
+  color: black;
+}
+.black {
+  background: #000;
+}
+.blue {
+  background: #3498db;
+}
+.red {
+  background: #e74c3c;
+}
+.brown {
+  background: #8b5a2b;
+}
+.beige {
+  background: #d8c3a5;
+  color: black;
+}

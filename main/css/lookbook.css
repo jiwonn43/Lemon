@@ -1,0 +1,46 @@
+/* lookbook 페이지는 카드형 이미지 갤러리를 보여준다 */
+
+/* 배경은 흐린 이미지 + 반투명 오버레이 */
+body {
+  margin: 0;
+  font-family: Arial;
+  color: #2c3e50;
+
+  background-image: url("../image/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+/* 흰색 오버레이 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: -1;
+}
+
+/* 이미지 카드 그리드 */
+#container {
+  column-count: 5;
+  column-gap: 16px;
+  padding: 16px;
+}
+
+/* 카드 개별 스타일 */
+.card {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+/* 카드 이미지 */
+.card img {
+  width: 100%;
+  display: block;
+}

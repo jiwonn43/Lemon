@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lookbook</title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/lookbook.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo" onclick="location.href = 'home.html'">LEMON</div>
+
+        <nav>
+          <a href="lookbook.html" class="active">Lookbook</a>
+          <a href="score.html">Score</a>
+          <a href="style.html">Style</a>
+          <a href="daily.html">Daily</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 추천 의류 -->
+      <section class="recommend-wrap">
+        <h2 class="section-title">추천 의류</h2>
+
+        <div class="recommend-items" id="recommendItems"></div>
+      </section>
+
+      <!-- 이미지 룩북 -->
+      <section id="container"></section>
+    </main>
+
+    <script src="../js/lookbook.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+/* score 페이지는 날씨 점수를 시각적으로 보여주는 페이지 */
+
+/* 중앙 정렬 레이아웃 */
+.score-wrap {
+  height: calc(85vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 점수 제목 */
+.title {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/* 큰 점수 숫자 */
+.score-number {
+  font-size: 90px;
+  font-weight: 700;
+  color: #89cff0;
+}
+
+/* 게이지 바 전체 영역 */
+.bar-wrap {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 게이지 배경 */
+.bar {
+  flex: 1;
+  height: 18px;
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* 게이지 채워지는 부분 */
+#barFill {
+  height: 100%;
+  width: 0%;
+  background: #89cff0;
+}
+
+/* 점수 양 끝 숫자 */
+.min,
+.max {
+  font-size: 12px;
+}
+
+/* 한줄 코멘트 */
+.comment {
+  background: #2c3e50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+}

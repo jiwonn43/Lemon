@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Style</title>
+
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo" onclick="location.href = 'home.html'">LEMON</div>
+
+        <nav>
+          <a href="lookbook.html">Lookbook</a>
+          <a href="score.html">Score</a>
+          <a href="style.html" class="active">Style</a>
+          <a href="daily.html">Daily</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>준비물 추천</h2>
+        <p id="item">불러오는 중...</p>
+      </section>
+
+      <!-- 메인 컬러 선택 -->
+      <section>
+        <h2>Main Color</h2>
+
+        <div class="color-palette">
+          <div class="color-item" onclick="selectColor('navy', event)">
+            <div class="chip navy"></div>
+            <span>Navy</span>
+          </div>
+
+          <div class="color-item" onclick="selectColor('gray')">
+            <div class="chip gray"></div>
+            <span>Gray</span>
+          </div>
+
+          <div class="color-item" onclick="selectColor('white')">
+            <div class="chip white"></div>
+            <span>White</span>
+          </div>
+
+          <div class="color-item" onclick="selectColor('black')">
+            <div class="chip black"></div>
+            <span>Black</span>
+          </div>
+
+          <div class="color-item" onclick="selectColor('blue')">
+            <div class="chip blue"></div>
+            <span>Blue</span>
+          </div>
+
+          <div class="color-item" onclick="selectColor('red')">
+            <div class="chip red"></div>
+            <span>Red</span>
+          </div>
+
+          <div class="color-item" onclick="selectColor('brown')">
+            <div class="chip brown"></div>
+            <span>Brown</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 추천 컬러 -->
+      <section>
+        <h2>Recommended Match</h2>
+        <div id="match" class="match-box"></div>
+      </section>
+    </main>
+
+    <script src="../js/style.js"></script>
+  </body>
+</html>

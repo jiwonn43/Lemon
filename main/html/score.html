@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Today Score</title>
+
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/score.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo" onclick="location.href = 'home.html'">LEMON</div>
+
+        <nav>
+          <a href="lookbook.html">Lookbook</a>
+          <a href="score.html" class="active">Score</a>
+          <a href="style.html">Style</a>
+          <a href="daily.html">Daily</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="score-wrap">
+        <h2 class="title">오늘의 점수</h2>
+
+        <div class="score-number" id="scoreNumber">0</div>
+
+        <div class="bar-wrap">
+          <span class="min">0</span>
+
+          <div class="bar">
+            <div id="barFill"></div>
+          </div>
+
+          <span class="max">100</span>
+        </div>
+
+        <p class="comment" id="comment">분석중...</p>
+      </section>
+    </main>
+
+    <script src="../js/score.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/Pretendard/dist/web/static/pretendard.css");
+
+/*전체 사이트 기본 폰트 설정*/
+
+body {
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2c3e50;
+  background: #f4f6f9;
+}
+
+/*제목/부제목/본문 통일 규칙*/
+
+h1,
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+p,
+span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/*페이지 공통 레이아웃*/
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+section {
+  background: #ffffff;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* BUTTON */
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/*HEADER*/
+
+.logo {
+  color: #fff176;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/*NAVIGATION
+   (모든 페이지 공통 네비게이션)*/
+
+nav a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* 현재 페이지 표시 */
+nav a.active {
+  background: white;
+  color: #2c3e50;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
